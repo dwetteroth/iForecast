@@ -1,0 +1,13 @@
+one:
+  street: "123 Main St"
+  city: "Denver"
+  state: "CO"
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+two:
+  street: "456 Oak Ave"
+  city: "Boulder"
+  state: "CO"
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>

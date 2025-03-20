@@ -1,0 +1,506 @@
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "street" varchar, "city" varchar, "state" varchar, "zip_code" varchar, "latitude" decimal, "longitude" decimal, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "weathers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "weathers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "zip_code" varchar, "temperature" decimal, "high_temp" decimal, "low_temp" decimal, "description" varchar, "cached_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250319191323)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250319191302);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-03-20 04:38:36.375171', '2025-03-20 04:38:36.375172') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '34637a874b3c010954309192f0508aaff1e29a46', '2025-03-20 04:38:36.375563', '2025-03-20 04:38:36.375563') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+DELETE FROM "weathers";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL), (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL);
+INSERT INTO "weathers" ("id", "zip_code", "temperature", "high_temp", "low_temp", "description", "cached_at", "created_at", "updated_at") VALUES (980190962, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.462860', '2025-03-20 04:38:36.462860'), (298486374, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.462860', '2025-03-20 04:38:36.462860')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+DELETE FROM "weathers";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL), (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL);
+INSERT INTO "weathers" ("id", "zip_code", "temperature", "high_temp", "low_temp", "description", "cached_at", "created_at", "updated_at") VALUES (980190962, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.490253', '2025-03-20 04:38:36.490253'), (298486374, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.490253', '2025-03-20 04:38:36.490253')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+DELETE FROM "weathers";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL), (NULL, 'MyString', 'MyString', 'MyString', 'MyString', 9.99, 9.99, NULL, NULL);
+INSERT INTO "weathers" ("id", "zip_code", "temperature", "high_temp", "low_temp", "description", "cached_at", "created_at", "updated_at") VALUES (980190962, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.491832', '2025-03-20 04:38:36.491832'), (298486374, 'MyString', 9.99, 9.99, 9.99, 'MyString', '2025-03-19 13:13:02', '2025-03-20 04:38:36.491832', '2025-03-20 04:38:36.491832')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:47:02', '2025-03-20 04:47:02'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:47:02', '2025-03-20 04:47:02')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 22:47:02 -0600
+Processing by WeatherController#index as HTML
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+ActionController::MissingExactTemplate - WeatherController#index is missing a template for request formats: text/html:
+  test/controllers/weather_controller_test.rb:24:in `block in <class:WeatherControllerTest>'
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:50:42', '2025-03-20 04:50:42'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:50:42', '2025-03-20 04:50:42')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 22:50:42 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:54:26', '2025-03-20 04:54:26'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:54:26', '2025-03-20 04:54:26')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather" for 127.0.0.1 at 2025-03-19 22:54:26 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:56:01', '2025-03-20 04:56:01'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:56:01', '2025-03-20 04:56:01')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather" for 127.0.0.1 at 2025-03-19 22:56:01 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:56:06', '2025-03-20 04:56:06'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:56:06', '2025-03-20 04:56:06')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather" for 127.0.0.1 at 2025-03-19 22:56:06 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 04:59:01', '2025-03-20 04:59:01'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 04:59:01', '2025-03-20 04:59:01')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 22:59:01 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 22:59:01 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 22:59:01 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 22:59:01 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 479ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 05:02:36', '2025-03-20 05:02:36'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 05:02:36', '2025-03-20 05:02:36')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 23:02:36 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:02:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:02:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:02:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 05:11:36', '2025-03-20 05:11:36'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 05:11:36', '2025-03-20 05:11:36')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 23:11:36 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:11:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:11:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:11:36 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+LocationIqTest: test_geocode_returns_latitude,_longitude,_and_zip_code
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+LocationIqTest: test_geocode_raises_an_error_when_no_result_is_found
+--------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 05:12:32', '2025-03-20 05:12:32'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 05:12:32', '2025-03-20 05:12:32')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+LocationIqTest: test_geocode_returns_latitude,_longitude,_and_zip_code
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+LocationIqTest: test_geocode_raises_an_error_when_no_result_is_found
+--------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:12:32 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.2ms (0 queries, 0 cached) | GC: 0.5ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:12:33 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:12:33 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 23:12:33 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------
+OpenWeatherServiceTest: test_fetch_weather_returns_expected_data
+----------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+OpenWeatherServiceTest: test_fetch_forecast_returns_expected_forecast_data
+--------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.0ms)[0m  [1m[31mDELETE FROM "addresses";
+INSERT INTO "addresses" ("id", "street", "city", "state", "zip_code", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, '123 Main St', 'Denver', 'CO', NULL, NULL, NULL, '2025-03-20 05:40:06', '2025-03-20 05:40:06'), (NULL, '456 Oak Ave', 'Boulder', 'CO', NULL, NULL, NULL, '2025-03-20 05:40:06', '2025-03-20 05:40:06')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+OpenWeatherServiceTest: test_fetch_forecast_returns_expected_forecast_data
+--------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------
+OpenWeatherServiceTest: test_fetch_weather_returns_expected_data
+----------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_true_on_subsequent_call
+-----------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:40:06 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.1ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:40:06 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+WeatherControllerTest: test_should_get_index
+--------------------------------------------
+Started GET "/weather/index" for 127.0.0.1 at 2025-03-19 23:40:06 -0600
+Processing by WeatherController#index as JSON
+  Parameters: {"weather"=>{}}
+No template found for WeatherController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------
+WeatherControllerTest: test_search_returns_weather_data_with_cache_flag_false_on_first_call
+-------------------------------------------------------------------------------------------
+Started GET "/weather/search" for 127.0.0.1 at 2025-03-19 23:40:06 -0600
+Processing by WeatherController#search as JSON
+  Parameters: {"address"=>"10687 W Cooper Dr.", "weather"=>{}}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+LocationIqTest: test_geocode_raises_an_error_when_no_result_is_found
+--------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+LocationIqTest: test_geocode_returns_latitude,_longitude,_and_zip_code
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

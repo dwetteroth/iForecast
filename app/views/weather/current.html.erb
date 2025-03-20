@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+  <!-- Include jQuery if it's not already included in your asset pipeline -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Weather Dashboard</h1>
+  <div id="current-weather"></div>
+  <div id="forecast"></div>
+
+  <script>
+    $(document).ready(function() {
+      // Fetch current weather
+      $.ajax({
+        url: '/weather/current',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          var currentHtml = '<h2>Current Weather</h2>';
+          currentHtml += '<p>Temperature: ' + data.temp + '°F</p>';
+          currentHtml += '<p>Condition: ' + data.condition + '</p>';
+          $('#current-weather').html(currentHtml);
+        },
+        error: function(err) {
+          console.log("Error fetching current weather:", err);
+        }
+      });
+
+      // Fetch forecast data
+      $.ajax({
+        url: '/weather/forecast',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          var forecastHtml = '<h2>Forecast</h2>';
+          $.each(data, function(index, day) {
+            forecastHtml += '<p>Date: ' + day.date + ' - Temp: ' + day.temp + '°F</p>';
+          });
+          $('#forecast').html(forecastHtml);
+        },
+        error: function(err) {
+          console.log("Error fetching forecast:", err);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

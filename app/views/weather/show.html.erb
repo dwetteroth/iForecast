@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="text-center">iForecast</h1>
+    <div id="address-search" class="mb-4">
+      <div class="input-group">
+        <input type="text" id="address" class="form-control" placeholder="Enter address">
+        <div class="input-group-append">
+          <button id="search-btn" class="btn btn-primary">Search Weather</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Current Weather Section -->
+    <div id="current-weather"></div>
+
+    <!-- Forecast Section -->
+    <div id="forecast"></div>
+  </div>
+  
+</body>
+</html>
